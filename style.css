@@ -1,0 +1,28 @@
+
+
+
+body {
+    box-sizing: border-box;
+}
+
+.grid-grandparent {
+    width: var(--size);
+}
+
+
+.grid-parent {
+    background-color: yellow;
+    display: flex;
+    flex-wrap: wrap;
+    gap:1px;
+   
+}
+
+.grid {
+    width: 9px;
+    height: 9px;
+    background-color: gray;
+}
+
+
+
