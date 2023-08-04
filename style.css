@@ -30,4 +30,11 @@ body {
     background-color: gray;
 }
 
+.grid-cell-hover {
+    background-color: red;
+}
 
+/*INFO-below: it works 
+.grid-cell:hover {
+    background-color: blue;
+} */
