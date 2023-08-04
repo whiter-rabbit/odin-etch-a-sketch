@@ -2,33 +2,33 @@ console.log("test")
 
 const gridGrandparent = document.querySelector(".grid-grandparent");
 const gridSizeBtn = document.querySelector(".grid-size-btn");
-let gridSizeForCss = document.querySelector(".grid-size-for-css");
+let gridParent;
 
 let gridSizeChosen = 16;
+createGrid();
 
+function createGrid (){
+    gridParent = document.createElement("div");
+    gridParent.classList.add("grid-parent");
+    gridGrandparent.append(gridParent);
+    let gridCell; 
+    for (let i=0; i<(gridSizeChosen ** 2); i++) {
+        gridCell = document.createElement("div");
+        gridCell.classList.add("grid-cell");
+        gridParent.append(gridCell);
+        gridCell.style.setProperty('--cell-size', (961 - gridSizeChosen) / gridSizeChosen + "px");
+        }
+}
 
 gridSizeBtn.addEventListener('click', function(e){
     playerSelection();
 });
 
-gridSizeForCss = document.createElement("div");
-
 
 function playerSelection () {
-    gridSizeChosen = Number(prompt("Type the desired size of the square grid. Eg.:'16' means 16x16"));
-    gridGrandparent.style.setProperty('--size', gridSizeChosen * 10 + "px");
-    console.log(typeof gridSizeChosen + gridSizeChosen);
+    gridParent.remove();
+    gridSizeChosen = Number(prompt("Choose the desired size of the square grid - type an integer between 2 and 100"));
     createGrid()
 }
 
-function createGrid (){
-    const gridParent = document.createElement("div");
-    gridParent.classList.add("grid-parent");
-    gridGrandparent.append(gridParent);
-    let grid; 
-    for (let i=0; i<(gridSizeChosen ** 2); i++) {
-        grid = document.createElement("div");
-        grid.classList.add("grid");
-        gridParent.append(grid);
-        }
-}
+

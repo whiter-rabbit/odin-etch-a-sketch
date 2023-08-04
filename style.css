@@ -4,25 +4,30 @@
 body {
     box-sizing: border-box;
 }
-
-.grid-grandparent {
-    width: var(--size);
+.grid-size-btn {
+    height: 50px;
+    margin: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
 }
-
 
 .grid-parent {
     background-color: yellow;
+    width: 960px;
+    height: 960px;
+
     display: flex;
     flex-wrap: wrap;
-    gap:1px;
-   
+    gap: 1px;
+    justify-content: center;
+    align-items: center;
 }
 
-.grid {
-    width: 9px;
-    height: 9px;
+.grid-cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
     background-color: gray;
 }
-
 
 
