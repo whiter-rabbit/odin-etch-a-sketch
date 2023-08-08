@@ -13,7 +13,7 @@ body {
 }
 
 .grid-parent {
-    background-color: yellow;
+    background-color: black;
     width: 960px;
     height: 960px;
 
@@ -30,11 +30,8 @@ body {
     background-color: gray;
 }
 
-.grid-cell-hover {
+.grid-cell-click {
     background-color: red;
+    /* transition: all 0.5s; */
 }
 
-/*INFO-below: it works 
-.grid-cell:hover {
-    background-color: blue;
-} */

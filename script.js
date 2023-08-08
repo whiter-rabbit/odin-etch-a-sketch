@@ -38,23 +38,14 @@ function playerSelection () {
         }
 }
 
-//INFO: not working yet
-let gridCells = Array.from(document.querySelectorAll(".grid-cell"));
-// i should probably access all elements of an array
+
+let gridCells = (Array.from(document.querySelectorAll(".grid-cell")));
 for (let i=0; i<(gridSizeChosen ** 2); i++) {
-    gridCell.addEventListener("click", function(e){
-    console.log("hover");
-    gridCell.classList.add("grid-cell-hover");
-})
-};
-
-
-// // INFO: below version that works only for the last cell:
-// gridCell.addEventListener("click", function(e){
-//     console.log("hover");
-//     gridCell.classList.add("grid-cell-hover");
-// })
-
+    gridCells[i].addEventListener("click", function(e){
+            console.log("hover");
+            gridCells[i].classList.add("grid-cell-click");
+}
+)};
 
 
 // // INFO: below random not working stuff
