@@ -25,13 +25,14 @@ body {
 }
 
 .grid-cell {
+    /* INFO: --cell-size is related to the size of the default grid or the size chosen by the user */
     width: var(--cell-size);
     height: var(--cell-size);
     background-color: gray;
 }
 
-.grid-cell-click {
-    background-color: red;
-    /* transition: all 0.5s; */
-}
 
+.grid-cell-hover {
+    background-color: rgba(0, 0, 125, 0.8);
+    transition: all 0.15s;
+}

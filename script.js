@@ -1,28 +1,31 @@
-console.log("test")
+console.log("Play the game")
 
 const gridGrandparent = document.querySelector(".grid-grandparent");
-// let gridParent = document.querySelector(".grid-parent");
-// let gridCell = document.querySelector(".grid-cell");
+let gridParent = document.querySelector(".grid-parent");
+let gridCell = document.querySelector(".grid-cell");
 const gridSizeBtn = document.querySelector(".grid-size-btn");
 
 let gridSizeChosen = 16;
 createGrid();
 
+
 function createGrid (){
     gridParent = document.createElement("div");
     gridParent.classList.add("grid-parent");
     gridGrandparent.append(gridParent);
+    
     for (let i=0; i<(gridSizeChosen ** 2); i++) {
         gridCell = document.createElement("div");
         gridCell.classList.add("grid-cell");
         gridParent.append(gridCell);
         //INFO-below: adding property for css (--cell-size) that calculates the size of the cell based on the number chosen by the user
-        gridCell.style.setProperty('--cell-size', (961 - gridSizeChosen) / gridSizeChosen + "px");      
+        gridCell.style.setProperty('--cell-size', (961 - gridSizeChosen) / gridSizeChosen + "px"); 
     }
 }
 
 gridSizeBtn.addEventListener('click', function(e){
     playerSelection();
+    gridMark();
 });
 
 function playerSelection () {
@@ -34,18 +37,23 @@ function playerSelection () {
         createGrid();
     }
     else{
-        createGrid();
+        createGrid();     
         }
 }
 
 
-let gridCells = (Array.from(document.querySelectorAll(".grid-cell")));
+function gridMark () {
+gridCell = (Array.from(document.querySelectorAll(".grid-cell")));
 for (let i=0; i<(gridSizeChosen ** 2); i++) {
-    gridCells[i].addEventListener("click", function(e){
-            console.log("hover");
-            gridCells[i].classList.add("grid-cell-click");
-}
+    gridCell[i].addEventListener("mouseover", function(e){
+        gridCell[i].classList.add("grid-cell-hover");
+    }
 )};
+}
+
+gridMark();
+
+
 
 
 // // INFO: below random not working stuff
