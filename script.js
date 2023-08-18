@@ -17,8 +17,7 @@ function createGrid (){
         gridCell = document.createElement("div");
         gridCell.classList.add("grid-cell");
         gridParent.append(gridCell);
-        //INFO-below: adding property for css (--cell-size) that calculates the size of the cell based on the number chosen by the user
-        gridCell.style.setProperty('--cell-size', (900 + 1 - gridSizeChosen) / gridSizeChosen + "px"); 
+        gridCell.style.setProperty('--cell-size', 960 / gridSizeChosen + "px"); 
     }
 }
 
@@ -52,18 +51,7 @@ function playerSelection () {
             createGrid();     
             }
     }
-//     if (gridSizeChosen < 2 || gridSizeChosen > 100) {
-//         alert("Please type a number between 2 and 100"); 
-//         gridSizeChosen = 16;
-//         createGrid();
-//     }
-//     else {
-//         createGrid();   
-//     }
 }
-
-
-
 
 function gridMark () {
 gridCell = (Array.from(document.querySelectorAll(".grid-cell")));

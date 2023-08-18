@@ -14,13 +14,12 @@ body {
 
 .grid-parent {
     background-color: red;
-    width: 900px;
-    height: 900px;
+    width: 960px;
+    height: 960px;
 
     display: flex;
     flex-wrap: wrap;
-    gap: 1px;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -29,6 +28,9 @@ body {
     width: var(--cell-size);
     height: var(--cell-size);
     background-color: gray;
+    border: 1px solid yellow;
+
+    box-sizing: border-box;
 }
 
 
