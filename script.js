@@ -17,6 +17,7 @@ function createGrid (){
         gridCell = document.createElement("div");
         gridCell.classList.add("grid-cell");
         gridParent.append(gridCell);
+        //INFO-below: adding property for css (--cell-size) that calculates the size of the cell based on the number chosen by the user
         gridCell.style.setProperty('--cell-size', 960 / gridSizeChosen + "px"); 
     }
 }
@@ -58,8 +59,18 @@ gridCell = (Array.from(document.querySelectorAll(".grid-cell")));
 for (let i=0; i<(gridSizeChosen ** 2); i++) {
     gridCell[i].addEventListener("mouseover", function(e){
         gridCell[i].classList.add("grid-cell-hover");
+        gridCell[i].style.setProperty('--hover-color', randomColor() )
     }
 )};
 }
 
 gridMark();
+
+
+function randomColor () {
+    randomColor1 ='rgb(' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) +')' 
+    console.log(randomColor1);
+    return randomColor1;
+}
+
+

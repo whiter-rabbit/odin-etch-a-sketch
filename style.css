@@ -1,9 +1,5 @@
 
 
-
-body {
-    box-sizing: border-box;
-}
 .grid-size-btn {
     height: 50px;
     margin: 20px;
@@ -28,13 +24,17 @@ body {
     width: var(--cell-size);
     height: var(--cell-size);
     background-color: gray;
-    border: 1px solid yellow;
-
+    border: 1px solid dimgray;
+    
     box-sizing: border-box;
 }
 
 
 .grid-cell-hover {
-    background-color: rgba(0, 0, 125, 0.8);
+    /* INFO: --hover-color is a random color */
+    background-color: var(--hover-color);
     transition: all 0.15s;
 }
+
+
+
