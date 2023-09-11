@@ -68,9 +68,25 @@ gridMark();
 
 
 function randomColor () {
-    randomColor1 ='rgb(' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) +')' 
-    console.log(randomColor1);
-    return randomColor1;
+    randomColorCell ='hsl(' + Math.floor(Math.random() * 360) + ', ' + Math.floor(Math.random() * 100) + '%, ' + Math.floor(Math.random() * 100) +'%)' 
+    console.log(randomColorCell)
+    return randomColorCell;
 }
 
+// INFO: below random color in rgb
+// function randomColor () {
+//     randomColor1 ='rgb(' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) +')' 
+//     return randomColor1;
+// }
 
+
+
+function darkerColor () {
+    let hslLength;
+    randomColorCell = "hsl(288, 5%, 69%)"
+    hslLength = randomColorCell.length 
+    console.log("test:" + hslLength)
+    
+    
+}
+darkerColor();
