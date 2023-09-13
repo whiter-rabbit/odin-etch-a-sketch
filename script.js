@@ -59,14 +59,16 @@ gridCell = (Array.from(document.querySelectorAll(".grid-cell")));
 for (let i=0; i<(gridSizeChosen ** 2); i++) {
     gridCell[i].addEventListener("mouseover", function(e){
         gridCell[i].classList.add("grid-cell-hover");
-        gridCell[i].style.setProperty('--hover-color', randomColor() )
+        gridCell[i].style.setProperty('--hover-color', darkerColor() )
+        // INFO: below version that gives random colors 
+        // gridCell[i].style.setProperty('--hover-color', randomColor() )
     }
 )};
 }
 
 gridMark();
 
-
+// INFO: below random color in hsl
 function randomColor () {
     randomColorCell ='hsl(' + Math.floor(Math.random() * 360) + ', ' + Math.floor(Math.random() * 100) + '%, ' + Math.floor(Math.random() * 100) +'%)' 
     console.log(randomColorCell)
@@ -75,18 +77,45 @@ function randomColor () {
 
 // INFO: below random color in rgb
 // function randomColor () {
-//     randomColor1 ='rgb(' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) +')' 
-//     return randomColor1;
+//     randomColorCell ='rgb(' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) +')' 
+//     return randomColorCell;
 // }
 
 
+// INFO: below length of hsl string
+// function colorLength () {
+//     let hslLength;
+//     randomColorCell = "hsl(288, 5%, 69%)";
+//     hslLength = randomColorCell.length ;
+//     console.log("test:" + hslLength);  
+// }
 
+// colorLength();
+
+let darkerColorCell = 'hsl(0, 0%, 100%)';
+
+
+// INFO: partially working function: the first tile changes color into light grey
 function darkerColor () {
-    let hslLength;
-    randomColorCell = "hsl(288, 5%, 69%)"
-    hslLength = randomColorCell.length 
-    console.log("test:" + hslLength)
-    
-    
+    let darkerColorPart = darkerColorCell.slice(4, -2); // cuts hsl into whatever is inside the brackets, IMPORTANT:-2 cuts also '%' to make it easier later!
+    console.log(darkerColorPart);
+    let darkerColorArray = darkerColorPart.split(", ") //making an array made of 3 elements 
+    console.log(darkerColorArray);
+    let lightness = darkerColorArray[2]
+    lightness -= 10; //the color gets darker by 10%
+    console.log(lightness)
+    darkerColorArray.pop();
+    console.log(darkerColorArray)
+    darkerColorArray.push(lightness);
+    console.log(darkerColorArray);
+    darkerColorArray.toString();
+    darkerColorCell = 'hsl(' + darkerColorArray + '%)'
+    console.log(darkerColorCell)
+    console.log(typeof darkerColorCell)
+    return darkerColorCell;
 }
-darkerColor();
+
+
+
+   
+    
