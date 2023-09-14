@@ -95,15 +95,18 @@ function randomColor () {
 let darkerColorCell = 'hsl(0,0%,100%)';
 
 
-// INFO: works - each color is darker, until it reaches black
+// INFO: works - staring from pale gray, color gets darker, when it reaches black it turns into white again
 function darkerColor () {
     let darkerColorPart = darkerColorCell.slice(4, -2); // cuts hsl into whatever is inside the brackets, IMPORTANT:-2 cuts also '%' to make it easier later!
     console.log("start color = " + darkerColorPart);
     let darkerColorArray = darkerColorPart.split(",") //making an array made of 3 elements 
     let lightness = darkerColorArray[2]
-    console.log(darkerColorArray)
-    console.log(darkerColorArray[2])
-    lightness -= 10; //the color gets darker by 10%
+        if (darkerColorArray[2] >= 10 && darkerColorArray[2] <= 100){
+        lightness -= 10; //the color gets darker by 10%
+        }
+        else {
+        lightness += 100 ; //the color gets white again  
+        }
     darkerColorArray.pop();
     darkerColorArray.push(lightness);
     console.log("final color = " + darkerColorArray);
