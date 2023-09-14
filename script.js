@@ -92,26 +92,24 @@ function randomColor () {
 
 // colorLength();
 
-let darkerColorCell = 'hsl(0, 0%, 100%)';
+let darkerColorCell = 'hsl(0,0%,100%)';
 
 
-// INFO: partially working function: the first tile changes color into light grey
+// INFO: works - each color is darker, until it reaches black
 function darkerColor () {
     let darkerColorPart = darkerColorCell.slice(4, -2); // cuts hsl into whatever is inside the brackets, IMPORTANT:-2 cuts also '%' to make it easier later!
-    console.log(darkerColorPart);
-    let darkerColorArray = darkerColorPart.split(", ") //making an array made of 3 elements 
-    console.log(darkerColorArray);
+    console.log("start color = " + darkerColorPart);
+    let darkerColorArray = darkerColorPart.split(",") //making an array made of 3 elements 
     let lightness = darkerColorArray[2]
-    lightness -= 10; //the color gets darker by 10%
-    console.log(lightness)
-    darkerColorArray.pop();
     console.log(darkerColorArray)
+    console.log(darkerColorArray[2])
+    lightness -= 10; //the color gets darker by 10%
+    darkerColorArray.pop();
     darkerColorArray.push(lightness);
-    console.log(darkerColorArray);
+    console.log("final color = " + darkerColorArray);
     darkerColorArray.toString();
     darkerColorCell = 'hsl(' + darkerColorArray + '%)'
-    console.log(darkerColorCell)
-    console.log(typeof darkerColorCell)
+    console.log("final color as string = " + darkerColorCell)
     return darkerColorCell;
 }
 
