@@ -1,17 +1,28 @@
 
 
+body {
+    width: 1000px;
+    margin: 0 auto;
+    background-color: rgb(217, 219, 215);
+}
+
 .grid-size-btn {
     height: 50px;
-    margin: 20px;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 16px;
+    margin: 180px 300px 20px;
+    padding: 10px 50px;
+    height: 72px;
+    border-radius: 30px;
+    font-size: 26px;
+    background-color: white;
+    color: black;
+    font-style: italic;
 }
 
 .grid-parent {
     background-color: red;
     width: 960px;
     height: 960px;
+    margin-left: 20px;
 
     display: flex;
     flex-wrap: wrap;
@@ -23,7 +34,7 @@
     /* INFO: --cell-size is related to the size of the default grid or the size chosen by the user */
     width: var(--cell-size);
     height: var(--cell-size);
-    background-color: gray;
+    background-color: hsl(0,0%,100%);
     border: 1px solid dimgray;
     
     box-sizing: border-box;

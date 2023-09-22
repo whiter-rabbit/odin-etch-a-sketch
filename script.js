@@ -59,64 +59,66 @@ gridCell = (Array.from(document.querySelectorAll(".grid-cell")));
 for (let i=0; i<(gridSizeChosen ** 2); i++) {
     gridCell[i].addEventListener("mouseover", function(e){
         gridCell[i].classList.add("grid-cell-hover");
-        gridCell[i].style.setProperty('--hover-color', darkerColor() )
-        // INFO: below version that gives random colors 
-        // gridCell[i].style.setProperty('--hover-color', randomColor() )
+        gridCell[i].style.setProperty('--hover-color', randomColor() )
+         // INFO: below version that should give darker color - not working properly yet 
+        // gridCell[i].style.setProperty('--hover-color', darkerColor() )
     }
 )};
 }
 
 gridMark();
 
-// INFO: below random color in hsl
+
 function randomColor () {
     randomColorCell ='hsl(' + Math.floor(Math.random() * 360) + ', ' + Math.floor(Math.random() * 100) + '%, ' + Math.floor(Math.random() * 100) +'%)' 
     console.log(randomColorCell)
     return randomColorCell;
 }
 
-// INFO: below random color in rgb
-// function randomColor () {
-//     randomColorCell ='rgb(' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) + ', ' + Math.floor(Math.random() * 255) +')' 
-//     return randomColorCell;
+
+// let darkerColorCell = 'hsl(0,0%,100%)';
+
+// // INFO: below NOT working - color is being read as undefined --- work in progress
+// function darkerColor () {
+//     let existingColor = gridCell.backgroundColor;
+//     console.log(gridCell)
+//     console.log(typeof gridCell)
+//     console.log(existingColor)
+//     console.log(typeof existingColor)
+//     let darkerColorPart = existingColor.slice(4, -2);
+//     console.log("start color = " + darkerColorPart);
+//     let darkerColorArray = darkerColorPart.split(",");
+//     let lightness = darkerColorArray[2];
+//     lightness -= 10; //the color gets darker by 10%
+//     darkerColorArray.pop();
+//     darkerColorArray.push(lightness);
+//     console.log("final color = " + darkerColorArray);
+//     darkerColorArray.toString();
+//     darkerColorCell = 'hsl(' + darkerColorArray + '%)'
+//     console.log("final color as string = " + darkerColorCell)
+//     return darkerColorCell;
 // }
 
 
-// INFO: below length of hsl string
-// function colorLength () {
-//     let hslLength;
-//     randomColorCell = "hsl(288, 5%, 69%)";
-//     hslLength = randomColorCell.length ;
-//     console.log("test:" + hslLength);  
+// // INFO: works - starting from pale gray, color gets darker, when it reaches black it turns into white again
+// function darkerColor () {
+//     let darkerColorPart = darkerColorCell.slice(4, -2); // cuts hsl into whatever is inside the brackets, IMPORTANT:-2 cuts also '%' to make it easier later!
+//     console.log("start color = " + darkerColorPart);
+//     let darkerColorArray = darkerColorPart.split(",") //making an array made of 3 elements 
+//     let lightness = darkerColorArray[2]
+//         if (darkerColorArray[2] >= 10 && darkerColorArray[2] <= 100){
+//         lightness -= 10; //the color gets darker by 10%
+//         }
+//         else {
+//         lightness += 100 ; //the color gets white again  
+//         }
+//     darkerColorArray.pop();
+//     darkerColorArray.push(lightness);
+//     console.log("final color = " + darkerColorArray);
+//     darkerColorArray.toString();
+//     darkerColorCell = 'hsl(' + darkerColorArray + '%)'
+//     console.log("final color as string = " + darkerColorCell)
+//     return darkerColorCell;
 // }
-
-// colorLength();
-
-let darkerColorCell = 'hsl(0,0%,100%)';
-
-
-// INFO: works - staring from pale gray, color gets darker, when it reaches black it turns into white again
-function darkerColor () {
-    let darkerColorPart = darkerColorCell.slice(4, -2); // cuts hsl into whatever is inside the brackets, IMPORTANT:-2 cuts also '%' to make it easier later!
-    console.log("start color = " + darkerColorPart);
-    let darkerColorArray = darkerColorPart.split(",") //making an array made of 3 elements 
-    let lightness = darkerColorArray[2]
-        if (darkerColorArray[2] >= 10 && darkerColorArray[2] <= 100){
-        lightness -= 10; //the color gets darker by 10%
-        }
-        else {
-        lightness += 100 ; //the color gets white again  
-        }
-    darkerColorArray.pop();
-    darkerColorArray.push(lightness);
-    console.log("final color = " + darkerColorArray);
-    darkerColorArray.toString();
-    darkerColorCell = 'hsl(' + darkerColorArray + '%)'
-    console.log("final color as string = " + darkerColorCell)
-    return darkerColorCell;
-}
-
-
-
    
     
